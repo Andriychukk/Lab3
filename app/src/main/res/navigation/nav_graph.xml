@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/PlayersListFragment">
+
+    <fragment
+        android:id="@+id/PlayersListFragment"
+        android:name="com.example.lab3navigationlab.screens.PlayersListFragment"
+        android:label="filmListFragment"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/main_nav2"
+            app:destination="@id/player_desc"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/player_desc"
+        android:name="com.example.lab3navigationlab.screens.DescriptionFragment"
+        android:label="fragment_description"
+        tools:layout="@layout/fragment_description" >
+        <argument
+            android:name="description"
+            android:defaultValue=""
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_DescriptionFragment_to_PlayersListFragment"
+            app:destination="@id/PlayersListFragment" />
+    </fragment>
+</navigation>
